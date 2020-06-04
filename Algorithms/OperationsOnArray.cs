@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Algorithms
@@ -28,9 +29,14 @@ namespace Algorithms
 		}
 
 		//Remove Duplicates from Sorted Array
-		public int RemoveDuplicatesFromSortedArray(int[] SortedArray)
+		public int GetLengthOfSortedArrayWithoutDuplicates(int[] sortedArray)
 		{
-			return 0;
+			if (sortedArray.Length == 0)
+				return 0;
+			sortedArray = sortedArray.Distinct().ToArray();
+			return sortedArray.Length;
+
+
 		}
 	}
 }

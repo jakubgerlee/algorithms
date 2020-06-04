@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using Algorithms;
 
 namespace Algorithms.Tests
 {
@@ -41,6 +40,28 @@ namespace Algorithms.Tests
 			var result = _operationsOnArray.GetTheSmallestPositiveNumber(input);
 
 			Assert.That(result, Is.EqualTo(3));
+		}
+
+		[Test]
+		public void GetLengthOfSortedArrayWithoutDuplicates_NegativeAndPositiveNumbersInArray_EverythingOk ()
+		{
+			var input = new[] {-5, -3, -3, 1, 1, 3, 5, 7 };
+			var expectedResult = 6;
+
+			var result = _operationsOnArray.GetLengthOfSortedArrayWithoutDuplicates(input);
+
+			Assert.That(result, Is.EqualTo(expectedResult));
+		}
+
+		[Test]
+		public void GetLengthOfSortedArrayWithoutDuplicates_OnlyNegativeNumbersInArray_EverythingOk()
+		{
+			var input = new[] { -5, -3, -3, -1};
+			var expectedResult = 3;
+
+			var result = _operationsOnArray.GetLengthOfSortedArrayWithoutDuplicates(input);
+
+			Assert.That(result, Is.EqualTo(expectedResult));
 		}
 	}
 }
