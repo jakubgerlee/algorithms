@@ -5,26 +5,32 @@ namespace Algorithms
 {
 	public class OperationsOnArray
 	{
-		public int GetTheSmallestPositiveNumberWhichIsNotInArray(int[] A)
+		public int GetTheSmallestPositiveNumber(int[] a)
 		{
-			Array.Sort(A);
-			if (A.Max() <= 0)
+			Array.Sort(a);
+			if (a.Max() <= 0)
 			{
 				return 1;
 			}
 
-			for (var i = A.Min(); i <= A.Max(); i++)
+			for (var i = a.Min(); i <= a.Max(); i++)
 			{
-				if (i == A.Max() && i > 0)
+				if (i == a.Max() && i > 0)
 				{
 					return ++i;
 				}
-				if (!A.Contains(i) && i > 0)
+				if (!a.Contains(i) && i > 0)
 				{
 					return i;
 				}
 			}
-			return A.Last();
+			return a.Last();
+		}
+
+		//Remove Duplicates from Sorted Array
+		public int RemoveDuplicatesFromSortedArray(int[] SortedArray)
+		{
+			return 0;
 		}
 	}
 }
