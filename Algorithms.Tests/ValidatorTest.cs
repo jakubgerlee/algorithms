@@ -12,7 +12,7 @@ namespace Algorithms.Tests
 			_validateArguments = new ValidateArguments();
 		}
 
-		// Everythinks is ok = 0
+		// Everything is ok = 0
 		// Wrong arguments = -1
 		// Need more details = 1
 
@@ -25,7 +25,7 @@ namespace Algorithms.Tests
 		}
 
 		[Test]
-		public void Validate_CorrectArgumentsWithHelpInput_NeedMoreDetails()
+		public void Validate_CorrectArgumentsWithHelp_NeedMoreDetails()
 		{
 			var result = _validateArguments.Validate(new[] { "--name", "SOME_NAME", "--count", "10", "--help" });
 
@@ -33,16 +33,25 @@ namespace Algorithms.Tests
 		}
 
 		[Test]
-		public void Validate_OnlyCountArgumentPassed_EverythingIsOk()
+		public void Validate_CorrectCountArguments_EverythingIsOk()
 		{
 			var result = _validateArguments.Validate(new[] { "--count", "10" });
-			Assert.That(result, Is.EqualTo(1));
+			Assert.That(result, Is.EqualTo(0));
 		}
 
 		[Test]
-		public void Validate_WrongCountInput_WrongArguments()
+		public void Validate_InvalidCountArgument_WrongArguments()
 		{
 			var result = _validateArguments.Validate(new[] { "--count", "text" });
+
+			Assert.That(result, Is.EqualTo(-1));
+
+		}
+
+		[Test]
+		public void Validate_WrongArgumentsWithHelp_WrongArguments()
+		{
+			var result = _validateArguments.Validate(new[] { "--name", "1","--help"});
 
 			Assert.That(result, Is.EqualTo(-1));
 

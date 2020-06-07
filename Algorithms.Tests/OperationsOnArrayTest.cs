@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using Algorithms;
 
 namespace Algorithms.Tests
 {
@@ -34,7 +33,7 @@ namespace Algorithms.Tests
 		}
 
 		[Test]
-		public void GetTheSmallestPositiveNumber_NegativeAndPositiveNumbersInArray_ReturnOne()
+		public void GetTheSmallestPositiveNumber_NegativeAndPositiveNumbersInArray_ReturnPositiveNumber()
 		{
 			var input = new[] { -1, -3, 6, 4, 1, 2 };
 
