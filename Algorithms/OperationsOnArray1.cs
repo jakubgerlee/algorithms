@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Algorithms
@@ -9,18 +8,45 @@ namespace Algorithms
 	{
 		//method should return G where G is a concatenation of some of the strings from A
 		//every letter in G has to be different
-		public int GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem(string[] A)
+		public int ConcatLongestStringWithUniqueCharacters(string[] A)
 		{
-			var longestStringLengthFrom = 0;
-			for (var i = 0; i < A.Length; i++)
+			A = GetStringsOnlyWithUniqueCharacters(A);
+			if (!A.Any())
+				return 0;
+			
+			var longestString = string.Empty;
+
+			foreach (var currentString in A)
 			{
-				var stringsWithoutThisLetter = A;
-				for (var j = 0; j < A[i].Length; j++)
+				var charactersThatExistsInTwoArrays = longestString.Intersect(currentString).ToList();
+				if (!charactersThatExistsInTwoArrays.Any())
 				{
-					stringsWithoutThisLetter = stringsWithoutThisLetter.Where(x => !x.Contains(A[i].ToCharArray()[j])).ToArray();
+					longestString += currentString;
 				}
 			}
-			return longestStringLengthFrom;
+
+			return longestString.Length;
+		}
+
+		public static string[] GetStringsOnlyWithUniqueCharacters(string[] strings)
+		{
+			var arrayWithUniqueCharactersPerString = strings;
+			foreach (var s in strings)
+			{
+				for (var i = 0; i < s.Length; i++)
+				{
+					for (var j = 0; j < s.Length; j++)
+					{
+						if (i == j)
+							continue;
+						if (s[i] == s[j])
+						{
+							arrayWithUniqueCharactersPerString = arrayWithUniqueCharactersPerString.Where(x => x != s).ToArray();
+						}
+					}
+				}
+			}
+			return arrayWithUniqueCharactersPerString;
 		}
 	}
 }

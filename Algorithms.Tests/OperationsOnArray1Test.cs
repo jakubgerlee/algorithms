@@ -19,7 +19,7 @@ namespace Algorithms.Tests
 
 			var result = _operationsOnArray1.GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem(input);
 			
-			Assert.That(result, Is.EqualTo(6));
+			Assert.That(result, Is.EqualTo(5));
 		}
 
 		[Test]
@@ -33,13 +33,23 @@ namespace Algorithms.Tests
 		}
 
 		[Test]
-		public void GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem_ManyStringProvided_Return0()
+		public void GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem_SameLettersInEachStrings_Return0()
 		{
 			var input = new[]{"potato", "kayak", "banana", "rececar"};
 
 			var result = _operationsOnArray1.GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem(input);
 
-			Assert.That(result, Is.EqualTo(6));
+			Assert.That(result, Is.EqualTo(0));
+		}
+
+		[Test]
+		public void GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem_SameLettersInEachStrings_Return9()
+		{
+			var input = new[]{"eva", "jqw", "tyn", "jan"};
+
+			var result = _operationsOnArray1.GetTheLongestStringLengthFromAllStringAfterSumTwoOfThem(input);
+
+			Assert.That(result, Is.EqualTo(9));
 		}
 	}
 }

@@ -13,8 +13,6 @@ namespace Interview
 			Solution2(15);
 
 			Console.ReadKey();
-
-
 		}
 
 		static void Solution2(int n)
