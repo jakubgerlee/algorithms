@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Algorithms
@@ -35,8 +34,6 @@ namespace Algorithms
 				return 0;
 			sortedArray = sortedArray.Distinct().ToArray();
 			return sortedArray.Length;
-
-
 		}
 	}
 }
