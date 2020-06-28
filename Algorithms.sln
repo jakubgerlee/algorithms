@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.Tests", "Algorit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interview", "Interview\Interview.csproj", "{CC1AB1C0-2108-4CE6-9349-680E17BE00D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqPlayground", "LinqPlayground\LinqPlayground.csproj", "{242DCA50-936C-4E38-9402-732D1783B3F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqPlayground", "LinqPlayground\LinqPlayground.csproj", "{242DCA50-936C-4E38-9402-732D1783B3F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCP", "OCP\OCP.csproj", "{CFBFD4EE-EC0C-4AB4-8519-5A43BEC673B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{242DCA50-936C-4E38-9402-732D1783B3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{242DCA50-936C-4E38-9402-732D1783B3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{242DCA50-936C-4E38-9402-732D1783B3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBFD4EE-EC0C-4AB4-8519-5A43BEC673B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBFD4EE-EC0C-4AB4-8519-5A43BEC673B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBFD4EE-EC0C-4AB4-8519-5A43BEC673B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBFD4EE-EC0C-4AB4-8519-5A43BEC673B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
